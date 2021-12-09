@@ -22,6 +22,8 @@ The notebooks *lstm_time_variant_channel.ipynb* and *qam_classifiers.ipynb* gene
 
 They can also be executed in Google's Colab.
 
+Please note that the Stable-Baselines 2 documentation (https://stable-baselines.readthedocs.io/en/master/guide/install.html) states that ``Stable-Baselines supports Tensorflow versions from 1.8.0 to 1.15.0, and does not work on Tensorflow versions 2.0.0 and above. PyTorch support is done in Stable-Baselines3''. Hence, you need to adopt Tensorflow 1.x when executing the RL code.
+
 # Installation of the beam_selection notebook
 
 The notebook *beam_selection.ipynb* requires downloading the input and output data for the neural network.
