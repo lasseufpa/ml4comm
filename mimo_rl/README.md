@@ -1,12 +1,12 @@
 # Installation of MimoRL-simple-1-v0 environment and DQN code
 
 Besides the dependencies described for the Jupyter notebooks of this tutorial, in order to run the RL code you will need 
-[Stable-Baselines](https://stable-baselines.readthedocs.io/en/master/) (we used stable-baselines version 2.10.2), OpenAI gym (we used gym==0.18.0), pygame (we used pygame==2.0.1) and bidict (we used bidict==0.21.2). 
+[Stable-Baselines](https://stable-baselines.readthedocs.io/en/master/) (we used stable-baselines version 2.10.2), OpenAI gym (we used gym==0.18.0), pygame (we used pygame==2.0.1) and bidict (we used bidict==0.21.2). We also recommend Python version 3.7, since Tensorflow 1.X is not available for Python versions above 3.7. 
 
-You can install bidict, for instance, with:
+You can install dependencies, for instance, with:
 
 ```
-pip install bidict
+pip install -r ./requirements.txt
 ```
 
 # Main scripts
