@@ -37,29 +37,22 @@ def train_classifier(clf_name, X, y, num_classes):
         Total number of classes
 
     """
-    names = ["Naive Bayes",
-             "Decision Tree", "Random Forest",
-             "AdaBoost",
-             "Linear SVM", "RBF SVM", "Gaussian Process",
-             "Neural Net",
-             "QDA", "Nearest Neighbors"]
+    classifiers = {
+        "Naive Bayes": GaussianNB(),
+        "Decision Tree": DecisionTreeClassifier(max_depth=100),
+        "Random Forest": RandomForestClassifier(max_depth=100, n_estimators=30),
+        "AdaBoost": AdaBoostClassifier(),
+        "Linear SVM": LinearSVC(), #linear SVM (maximum margin perceptron)
+        "RBF SVM": SVC(gamma=1, C=1),
+        "Gaussian Process": GaussianProcessClassifier(1.0 * RBF(1.0)),
+        "Neural Net": MLPClassifier(alpha=0.1, max_iter=500),
+        "QDA": QuadraticDiscriminantAnalysis(),
+        "Nearest Neighbors": KNeighborsClassifier(3)
+    }
 
-    classifiers = [
-        GaussianNB(),
-        DecisionTreeClassifier(max_depth=100),
-        RandomForestClassifier(max_depth=100, n_estimators=30),
-        AdaBoostClassifier(),
-        LinearSVC(), #linear SVM (maximum margin perceptron)
-        SVC(gamma=1, C=1),
-        GaussianProcessClassifier(1.0 * RBF(1.0)),
-        MLPClassifier(alpha=0.1, max_iter=500),
-        QuadraticDiscriminantAnalysis(),
-        KNeighborsClassifier(3)]
+    assert(clf_name in classifiers.keys())
 
-    assert(clf_name in names)
-
-    clf_ind = names.index(clf_name)
-    clf = classifiers[clf_ind]
+    clf = classifiers[clf_name]
     clf.fit(X, y)
 
     return clf
